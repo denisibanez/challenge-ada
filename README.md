@@ -18,7 +18,7 @@ Typescript
 
 Comandos importantes:
 
-npm run test --coverage -u
+npm run test:coverage
 npm run format
 npm run lint
 
