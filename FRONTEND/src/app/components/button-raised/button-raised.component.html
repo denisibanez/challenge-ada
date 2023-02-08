@@ -1,0 +1,16 @@
+<button
+    [color]="color"
+    [disabled]="disabled"
+    mat-raised-button
+    class="mat-elevation-z0"
+    [ngClass]="{ btnCustom__error: color === 'error', size__large: large }"
+    (click)="onBtnClick()"
+>
+    <div class="flex">
+        <mat-icon>
+            {{ icon }}
+        </mat-icon>
+        {{ label }}
+        <mat-spinner *ngIf="loader"></mat-spinner>
+    </div>
+</button>

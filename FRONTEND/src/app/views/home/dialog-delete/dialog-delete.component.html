@@ -1,0 +1,50 @@
+<app-dialog
+    [title]="'Excluir de card'"
+    [width]="'40%'"
+    [height]="'auto'"
+    [id]="'dialog-delete'"
+    (closeClick)="closeDialog()"
+>
+    <div class="content" *ngIf="selectedITem">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 flex-center">
+                    <mat-icon class="content__icon"> cancel </mat-icon>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 flex-center">
+                    <h2>
+                        Deseja realmente excluir o card com id
+                        {{ selectedITem.id }}?
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 flex-start">
+                    <app-button-outlined
+                        [large]="true"
+                        [label]="'Cancelar'"
+                        [icon]="'close'"
+                        class="button-fix"
+                        (btnClick)="closeDialog()"
+                    >
+                    </app-button-outlined>
+                </div>
+
+                <div class="col-md-6 flex-end">
+                    <app-button-raised
+                        [large]="true"
+                        [label]="'Excluir'"
+                        [icon]="'save'"
+                        class="button-fix"
+                        (btnClick)="deleteCard()"
+                    >
+                    </app-button-raised>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-dialog>

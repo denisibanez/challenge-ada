@@ -1,0 +1,13 @@
+<div class="snackbar__slot">
+    <div>
+        <div class="snackbar__slot--icon">
+            <mat-icon>{{data.icon}}</mat-icon>
+        </div>
+
+        <div class="snackbar__slot--message">{{ data.message }}</div>
+    </div>
+
+    <div class="snackbar__slot--action">
+        <mat-icon (click)="close()">close</mat-icon>
+    </div>
+</div>

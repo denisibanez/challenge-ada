@@ -1,0 +1,104 @@
+<div *ngIf="!chargeLoader" class="home__wraper container-fluid">
+    <div class="home__toolbar">
+        <div class="row">
+            <div class="col-md-12 home__toolbar--flexend">
+                <app-button-raised
+                    [large]="true"
+                    [label]="'Adicionar Card'"
+                    [icon]="'library_add'"
+                    (btnClick)="openDialog('open-modal')"
+                >
+                </app-button-raised>
+            </div>
+        </div>
+    </div>
+    <div class="home__kanban">
+        <div class="row control-section">
+            <div class="col-md-12 content-wrapper">
+                <div class="board">
+                    <div class="board-wrapper">
+                        <div class="board-columns">
+                            <div
+                                cdkDropList
+                                cdkDropListOrientation="horizontal"
+                                class="board-columns"
+                            >
+                                <div
+                                    cdkDragLockAxis="x"
+                                    class="board-column"
+                                    *ngFor="let column of board.columns"
+                                    cdkDrag
+                                >
+                                    <div class="column-title" cdkDragHandle>
+                                        <mat-icon>{{ column.icon }}</mat-icon>
+                                        {{ column.name }}
+                                    </div>
+                                    <div
+                                        class="tasks-container"
+                                        id="{{ column.id }}"
+                                        [cdkDropListConnectedTo]="[
+                                            '01',
+                                            '02',
+                                            '03'
+                                        ]"
+                                        cdkDropList
+                                        [cdkDropListData]="column.tasks"
+                                        (cdkDropListDropped)="drop($event)"
+                                    >
+                                        <div
+                                            class="task"
+                                            *ngFor="let item of column.tasks"
+                                            cdkDrag
+                                        >
+                                            <h3>{{ item.titulo }}</h3>
+                                            <p>{{ item.conteudo }}</p>
+                                            <div class="task__actions">
+                                                <button
+                                                    mat-mini-fab
+                                                    color="accent"
+                                                    (click)="
+                                                        [
+                                                            openDialog(
+                                                                'open-modal'
+                                                            ),
+                                                            selectedItem(item)
+                                                        ]
+                                                    "
+                                                >
+                                                    <mat-icon>edit</mat-icon>
+                                                </button>
+
+                                                <button
+                                                    mat-mini-fab
+                                                    color="error"
+                                                    (click)="
+                                                        [
+                                                            openDialog(
+                                                                'dialog-delete'
+                                                            ),
+                                                            selectedItem(item)
+                                                        ]
+                                                    "
+                                                >
+                                                    <mat-icon>delete</mat-icon>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-dialog-task
+            (closeClick)="[openDialog('/#'), getList()]"
+        ></app-dialog-task>
+
+        <app-dialog-delete
+            (closeClick)="[openDialog('/#'), getList()]"
+        ></app-dialog-delete>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+@import '../../../assets/scss/main';
+
+.modal-window .modal_content {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    min-width: 320px; /* This just a default width */
+
+    &.scrolable {
+        height: 100% !important;
+        overflow: auto;
+    }
+}
+
+.modal-window .modal_content > h2 {
+    font-size: 28px;
+    font-weight: 200;
+    margin: 20px 0 40px;
+    text-align: center;
+}
+
+.modal-window .dialog__header {
+    background-color: $primary;
+    height: 48px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    h5 {
+        @include font-format(
+            $color: $white,
+            $size: 18px,
+            $line-height: 32px,
+            $weight: 500
+        );
+        margin: 0;
+    }
+
+    .dialog__header--close {
+        color: $white;
+        cursor: pointer;
+        width: 25px;
+    }
+}
+
+.modal-window {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.85);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    &:target {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    & > div {
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+    }
+}
+
+.modal-window {
+    & > div {
+        border-radius: 0.5rem;
+    }
+}
+
+.modal-window div:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 960px) {
+    .modal-window .modal_content {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+        overflow: auto;
+    }
+}

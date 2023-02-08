@@ -1,0 +1,161 @@
+@import './_variables.scss';
+
+@mixin font-format(
+    $font: 'Roboto',
+    $size: 16px,
+    $color: $black,
+    $line-height: 20px,
+    $weight: 400,
+    $transform: none
+) {
+    font-family: $font;
+    font-size: $size;
+    color: $color;
+    line-height: $line-height;
+    font-weight: $weight;
+    text-transform: $transform;
+}
+
+.challenge-title-x-large {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 24px,
+        $color: $black,
+        $line-height: 48px,
+        $weight: 700,
+        $transform: none
+    );
+}
+
+.challenge-title-large {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 18px,
+        $color: $black,
+        $line-height: 32px,
+        $weight: 700,
+        $transform: none
+    );
+}
+
+.challenge-title-medium {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 16px,
+        $color: $black,
+        $line-height: 24px,
+        $weight: 700,
+        $transform: none
+    );
+}
+
+.challenge-title-x-small {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 14px,
+        $color: $black,
+        $line-height: 24px,
+        $weight: 700,
+        $transform: none
+    );
+}
+
+.challenge-title-small {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 12px,
+        $color: $black,
+        $line-height: 24px,
+        $weight: 700,
+        $transform: none
+    );
+}
+
+.challenge-text {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 16px,
+        $color: $black,
+        $line-height: 20px,
+        $weight: 400,
+        $transform: none
+    );
+}
+
+.challenge-text-small {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 14px,
+        $color: $black,
+        $line-height: 24px,
+        $weight: 400,
+        $transform: none
+    );
+}
+
+.challenge-text-x-small {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 10px,
+        $color: $black,
+        $line-height: 16px,
+        $weight: 500,
+        $transform: none
+    );
+}
+
+.challenge-text-bold {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 16px,
+        $color: $black,
+        $line-height: 16px,
+        $weight: 700,
+        $transform: none
+    );
+}
+
+.challenge-text-italic {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 16px,
+        $color: $black,
+        $line-height: 26px,
+        $weight: 400,
+        $transform: none
+    );
+    font-style: italic;
+}
+
+.challenge-text-link {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 16px,
+        $color: $link,
+        $line-height: 24px,
+        $weight: 400,
+        $transform: none
+    );
+}
+
+.challenge-display-large {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 72px,
+        $color: $link,
+        $line-height: 84px,
+        $weight: 700,
+        $transform: none
+    );
+}
+
+.challenge-display-medium {
+    @include font-format(
+        $font: 'Roboto',
+        $size: 36px,
+        $color: $link,
+        $line-height: 64px,
+        $weight: 700,
+        $transform: none
+    );
+}

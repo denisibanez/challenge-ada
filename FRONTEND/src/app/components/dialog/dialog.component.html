@@ -1,0 +1,14 @@
+<div [id]="id" class="modal-window">
+    <div class="modal_content" [style.width]="width" [style.height]="height">
+        <div class="dialog__header">
+            <h5>{{ title }}</h5>
+            <mat-icon class="dialog__header--close" (click)="close()"
+                >close</mat-icon
+            >
+        </div>
+
+        <div class="content">
+            <ng-content selector=".content"></ng-content>
+        </div>
+    </div>
+</div>

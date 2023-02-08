@@ -1,0 +1,16 @@
+<div class="app__textarea">
+    <div [ngClass]="{ small: small }">
+        <mat-form-field appearance="outline" [formGroup]="formAtribute">
+            <mat-label>{{ label }}</mat-label>
+            <textarea
+                matInput
+                [formControlName]="control"
+                [(ngModel)]="input"
+                (focus)="onFocus(item)"
+                (blur)="onBlur(item)"
+                style="height: 50px"
+                [placeholder]="placeholder"
+            ></textarea>
+        </mat-form-field>
+    </div>
+</div>

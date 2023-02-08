@@ -1,0 +1,35 @@
+@import '../../../assets/scss/main';
+
+.size__large {
+    &.mat-stroked-button {
+        @include font-format($color: $primary, $size: 16px, $line-height: 16px);
+        border-radius: 3px;
+        height: 44px;
+        i {
+            position: relative;
+            bottom: 2px;
+        }
+    }
+}
+
+.mat-stroked-button {
+    @include font-format($color: $primary, $size: 12px);
+    border-radius: 3px;
+    height: 36px;
+    padding: 5px 15px;
+
+    &:hover {
+        background-color: $accent;
+        color: $white;
+    }
+
+    &.mat-accent {
+        &:hover {
+            background-color: $secondary;
+        }
+    }
+}
+
+.btnCustom__error {
+    background-color: $error;
+}

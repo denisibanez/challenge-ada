@@ -1,0 +1,67 @@
+@import '../../../assets/scss/_main.scss';
+
+.header {
+    &__wrapper {
+        background-color: $primary;
+        height: 100px;
+    }
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        cursor: pointer;
+
+        img {
+            height: 60px;
+        }
+
+        p {
+            @include font-format($color: $white, $size: 18px, $weight: 500);
+            margin-left: 15px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__notifications {
+        height: 100px;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+
+        p {
+            text-align: right;
+            margin: 0;
+            padding-right: 15px;
+            @include font-format($color: #343741, $size: 16px, $weight: 500);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        &__brand {
+            > div {
+                display: flex;
+                align-items: center;
+                height: 100px;
+            }
+
+            img {
+                height: 60px;
+            }
+        }
+
+        &__notifications {
+            p {
+                padding-right: 2px;
+                @include font-format(
+                    $color: #343741,
+                    $size: 12px,
+                    $weight: 500
+                );
+            }
+        }
+    }
+}

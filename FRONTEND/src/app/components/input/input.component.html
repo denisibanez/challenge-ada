@@ -1,0 +1,54 @@
+<mat-form-field
+    appearance="outline"
+    [formGroup]="formAtribute"
+    class="appinput__wrapper"
+>
+    <mat-label>{{ label }}</mat-label>
+    <!-- Mask -->
+    <input
+        *ngIf="type === 'mask'"
+        [(ngModel)]="input"
+        [placeholder]="placeholder"
+        [formControlName]="control"
+        [imask]="{ mask: mask }"
+        [unmask]="true"
+        [maxlength]="maxlength"
+        (focus)="onFocus(item)"
+        (blur)="onBlur(item)"
+        type="text"
+        matInput
+    />
+    <!-- Text -->
+    <input
+        *ngIf="type === 'text'"
+        [(ngModel)]="input"
+        [placeholder]="placeholder"
+        [formControlName]="control"
+        [maxlength]="maxlength"
+        (focus)="onFocus(item)"
+        (blur)="onBlur(item)"
+        type="text"
+        matInput
+    />
+    <!-- Currency -->
+    <input
+        *ngIf="type === 'currency'"
+        [(ngModel)]="input"
+        [placeholder]="placeholder"
+        [formControlName]="control"
+        currencyMask
+        [maxlength]="maxlength"
+        [options]="currencyOptions"
+        (focus)="onFocus(item)"
+        (blur)="onBlur(item)"
+        type="text"
+        matInput
+    />
+    <mat-icon matSuffix *ngIf="icon" (click)="clickIcon(item)">
+        <i [ngClass]="icon"></i>
+    </mat-icon>
+    <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    <mat-error *ngIf="formAtribute.invalid"
+        >O campo {{ label.toLowerCase() }} é inválido.</mat-error
+    >
+</mat-form-field>

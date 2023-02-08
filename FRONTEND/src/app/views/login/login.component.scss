@@ -1,0 +1,48 @@
+@import '../../../assets/scss/_main.scss';
+
+.login-wrapper {
+    background-color: $primary;
+}
+.login-content {
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    .login-form-box {
+        width: 520px;
+        padding: 80px 60px;
+        border-radius: 12px;
+        color: $primary;
+
+        .login-form-body {
+            margin-top: 40px;
+        }
+
+        .login-form-footer {
+            margin-top: 40px;
+
+            ::ng-deep.mat-raised-button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .login-content {
+        min-height: 75vh;
+        .login-form-box {
+            width: 320px;
+            padding: 50px 15px;
+            .login-form-body {
+                .form-check-input {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .custom-control-label {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

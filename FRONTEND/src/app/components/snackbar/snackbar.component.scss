@@ -1,0 +1,56 @@
+@import '../../../assets/scss/font-format';
+@import '../../../assets/scss/variables';
+
+::ng-deep.mat-snack-bar-container {
+    max-width: 100% !important;
+    height: 56px !important;
+    border-radius: 5px;
+}
+
+.snackbar {
+    &__slot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > div {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__slot--message {
+        padding: 0 10px;
+    }
+
+    &__slot--action {
+        cursor: pointer;
+    }
+}
+
+::ng-deep.success-theme,
+::ng-deep.error-theme,
+::ng-deep.info-theme,
+::ng-deep.warn-theme {
+    @include font-format(
+        $weight: 500,
+        $line-height: 24px,
+        $color: $white,
+        $size: 16px
+    );
+}
+
+::ng-deep.success-theme {
+    background: #148735;
+}
+
+::ng-deep.error-theme {
+    background: $error;
+}
+
+::ng-deep.warn-theme {
+    background: #f19718;
+}
+
+::ng-deep.info-theme {
+    background: $primary;
+}

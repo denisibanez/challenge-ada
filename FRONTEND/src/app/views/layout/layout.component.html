@@ -1,0 +1,36 @@
+<!-- Layout -->
+<div class="layout__wrapper">
+    <!-- Header -->
+    <div *ngIf="!chargeLoader" class="layout__top">
+        <app-header></app-header>
+    </div>
+
+    <!-- Content -->
+    <div class="layout__views" [ngClass]="{ 'not-loader': !chargeLoader }">
+        <router-outlet></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <div *ngIf="!chargeLoader" class="layout__bottom">
+        <app-footer></app-footer>
+    </div>
+</div>
+
+<!-- Loader -->
+<div *ngIf="chargeLoader" class="layout__loader">
+    <app-loader> </app-loader>
+</div>
+
+<!-- Snackbar -->
+<div *ngIf="snackbar" class="layout__notifications">
+    <app-snackbar
+        [duration]="snackbar.duration"
+        [icon]="snackbar.icon"
+        [theme]="snackbar.theme"
+        [message]="snackbar.message"
+        [horizontalPosition]="snackbar.horizontalPosition"
+        [verticalPosition]="snackbar.verticalPosition"
+        [show]="snackbar.show"
+    >
+    </app-snackbar>
+</div>

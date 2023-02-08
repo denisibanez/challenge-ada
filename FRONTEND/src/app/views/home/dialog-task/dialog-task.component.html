@@ -1,0 +1,58 @@
+<app-dialog
+    [title]="'Gerenciador de cards'"
+    [width]="'40%'"
+    [height]="'auto'"
+    (closeClick)="closeDialog()"
+>
+    <div class="dialog__wrapper content">
+        <form novalidate [formGroup]="formAtribute">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <app-input
+                            [type]="inputs.title.type"
+                            [label]="inputs.title.label"
+                            [control]="inputs.title.control"
+                            [formAtribute]="formAtribute"
+                        ></app-input>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <app-text-area
+                            [small]="true"
+                            [formAtribute]="formAtribute"
+                            [control]="inputs.description.control"
+                            [label]="inputs.description.label"
+                        ></app-text-area>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 flex-start">
+                        <app-button-outlined
+                            [large]="true"
+                            [label]="'Cancelar'"
+                            [icon]="'close'"
+                            (btnClick)="closeDialog()"
+                        >
+                        </app-button-outlined>
+                    </div>
+
+                    <div class="col-md-6 flex-end">
+                        <app-button-raised
+                            [large]="true"
+                            [label]="'Salvar'"
+                            [icon]="'save'"
+                            [loader]="loader"
+                            [disabled]="!formAtribute.valid"
+                            (btnClick)="controlAction()"
+                        >
+                        </app-button-raised>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</app-dialog>

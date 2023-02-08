@@ -1,0 +1,97 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$custom-primary: (
+    50: #f3fbf8,
+    100: #d7f9ee,
+    200: #b8fce5,
+    300: #88f9d4,
+    400: #4edabb,
+    500: #18c29c,
+    600: #21ac93,
+    700: #7a297a,
+    800: #217c74,
+    900: #075952,
+    A100: #f3fbf8,
+    A200: #b8fce5,
+    A400: #4edabb,
+    A700: #21ac93,
+    contrast: (),
+);
+
+$custom-accent: (
+    50: #0b877d,
+    100: #e9fcee,
+    200: #9fa8da,
+    300: #90eeaa,
+    400: #5c6bc0,
+    500: #993399,
+    600: #3949ab,
+    700: #148735,
+    800: #283593,
+    900: #0a421a,
+    A100: #8c9eff,
+    A200: #536dfe,
+    A400: #3d5afe,
+    A700: #304ffe,
+    contrast: (),
+);
+
+$custom-warn: (
+    50: #fff2e9,
+    100: #ffe1cc,
+    200: #f9c29d,
+    300: #f4ac7b,
+    400: #f0995e,
+    500: #bf40bf,
+    600: #ca6c29,
+    700: #bd5911,
+    800: #9c4c15,
+    900: #75360a,
+    A100: #fff2e9,
+    A200: #f9c29d,
+    A400: #f0995e,
+    A700: #ca6c29,
+    contrast: (),
+);
+
+$custom-error: (
+    50: #fdf1f3,
+    100: #faeaec,
+    200: #f2bcc1,
+    300: #e8979f,
+    400: #ed5b69,
+    500: #d43d4c,
+    600: #b0313f,
+    700: #92202c,
+    800: #682129,
+    900: #3f0e13,
+    A100: #fdf1f3,
+    A200: #f2bcc1,
+    A400: #ed5b69,
+    A700: #b0313f,
+
+    contrast: (),
+);
+$theme-primary: mat.define-palette($custom-primary, 700);
+$theme-accent: mat.define-palette($custom-accent, 500);
+
+$theme-warn: mat.define-palette($custom-warn, 500);
+$theme-basic: mat.define-palette($custom-error, 500);
+
+$theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $theme-primary,
+            accent: $theme-accent,
+            warn: $theme-warn,
+            basic: $theme-basic,
+        ),
+    )
+);
+
+@include mat.all-component-themes($theme);
+
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';

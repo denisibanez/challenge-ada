@@ -1,0 +1,68 @@
+@import '../../../assets/scss/main';
+
+.size__large {
+    &.mat-raised-button {
+        @include font-format($color: $white, $size: 16px, $line-height: 16px);
+        border-radius: 3px;
+        height: 44px;
+    }
+}
+
+.mat-raised-button {
+    @include font-format($color: $white, $size: 14px);
+    border-radius: 3px;
+    height: 36px;
+    padding: 5px 15px;
+
+    ::ng-deep .mat-icon {
+        position: relative;
+        bottom: 2px;
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 18px;
+    }
+
+    ::ng-deep.mat-progress-spinner circle,
+    .mat-spinner circle {
+        stroke: white !important;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: #b3b3b3;
+        }
+    }
+
+    &:hover {
+        background-color: $secondary;
+    }
+
+    &.mat-accent {
+        &:hover {
+            background-color: $primary;
+        }
+    }
+}
+
+.btnCustom__error {
+    background-color: $error;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+::ng-deep.mat-progress-spinner {
+    width: 15px !important;
+    height: 15px !important;
+    margin-left: 5px;
+
+    svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+}
