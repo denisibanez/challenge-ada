@@ -1,7 +1,7 @@
 # Desenvolvimento de um Quadro de Kanban
 
 # Informações
-Esse projeto usa:
+* Esse projeto usa:
 Eslint
 Angular
 Reative Forms
