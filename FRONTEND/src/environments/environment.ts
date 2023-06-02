@@ -6,7 +6,7 @@ export const environment = {
     production: false,
     envName: 'dev',
     FAKE: 'https://randomuser.me/api/',
-    BASE_PATH: 'http://localhost:5000/',
+    BASE_PATH: 'http://localhost:3000/',
 };
 
 /*
