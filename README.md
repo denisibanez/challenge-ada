@@ -1,11 +1,11 @@
-# Desenvolvimento de um Quadro de Kanban
+# Development of a Kanban Board
 
-# Informações
-* Esse projeto usa:
-* Eslint
+# Information
+* This project uses:
+* slint
 * Angular
-* Reative Forms
-* Angular Material
+* Reactivate Forms
+* AngularMaterial
 * Angular Router
 * @ngxs/store
 * Angular Imask
@@ -14,25 +14,25 @@
 * husky
 * Prettier
 * jest
-* Typescript
+* typescript
 
-# Comandos importantes:
+# Important commands:
 
 * npm run test:coverage
 * npm run format
 * npm run lint
 
-obs: iria documentar os componentes com Storybook mas nao deu tempo
+obs: I was going to document the components with Storybook but I didn't have time
 
 
-## Para rodar o projeto
+## To run the project
 DEFAULT_LOGIN=letscode
 DEFAULT_PASSWORD=lets@123
 
 * cd FRONTEND
 * npm install
 * npm run start
-* http://localhost:4200/ 
+* http://localhost:4200/
 
 * cd BACK
 * npm install
